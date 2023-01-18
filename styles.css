@@ -1,19 +1,46 @@
-.form-input{
+body{
+    background-color: lightgray;
+}
+
+.main-container{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    align-items: center;
+}
+
+#form-id{
     display:grid;
     grid-template-rows: repeat(5,1fr);
+    gap:5px;
+}
+
+.form-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .library-container{
     display:grid;
-    grid-template-columns: repeat(4,100px);
+    grid-template-columns: repeat(6,100px);
 }
 
-.submit{
-    width:fit-content
+.edit-container{
+    display:grid;
+    grid-template-rows: repeat(5,1fr);
+}
+
+.edit-container input{
+    width:200px
+}
+
+.edit-container button{
+    width:fit-content;
 }
 
 .form-input input{
-    width:200px;
+    width:fit-content;
 }
 
 .book-row{
@@ -23,6 +50,6 @@
 
 .header-row{
     color:blue;
-    border:1px solid black;
+    border:2px solid black;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
