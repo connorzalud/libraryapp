@@ -63,7 +63,7 @@ function addBookItem(){
         editBtn.setAttribute("id",i);
         editBtn.textContent="Edit";
         library.append(editBtn);
-        deleteBtn.setAttribute("class",i);
+        deleteBtn.setAttribute("id",i+"id");
         deleteBtn.textContent="Delete";
         library.append(deleteBtn);
 
@@ -129,7 +129,8 @@ function addBookItem(){
         })
 
         deleteBtn.addEventListener("click", function(){
-            let index = this.classList;
+            let index = this.id.charAt(0);
+            console.log(index);
             removeBook(index);
             let deleteTitle = document.querySelector("#title"+index);
             let deleteAuthor = document.querySelector("#author"+index);
@@ -142,9 +143,25 @@ function addBookItem(){
             deleteRead.remove();
             deleteEdit.remove();
             this.remove();
-           // for(i=0;i<myLibrary.length;i++){
-             //   let updateTitle = document.querySelector("#title"+i);
-           // }
+           for(i=0;i<myLibrary.length;i++){
+              if(index > i){
+                console.log(index);
+                console.log(i);
+                console.log("no change")
+                continue
+              } else if (index <= i)
+              console.log(index);
+              console.log(i);
+              console.log("change id");
+              document.querySelector("#title"+(i+1)).setAttribute("id","title"+i);
+              document.querySelector("#author"+(i+1)).setAttribute("id","author"+i);
+              document.querySelector("#pages"+(i+1)).setAttribute("id","pages"+i);
+              document.querySelector("#read"+(i+1)).setAttribute("id","read"+i);
+              document.getElementById((i+1)).setAttribute("id",i);
+              document.getElementById((i+1)+"id").setAttribute("id",i+"id");
+              
+              
+           }
 
         })
 
